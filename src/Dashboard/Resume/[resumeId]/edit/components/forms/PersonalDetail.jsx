@@ -62,6 +62,7 @@ export default function PersonalDetail({ enabledNext }) {
           <div>
             <label className="text-sm">First Name</label>
             <Input
+              defaultValue={resumeInfo?.firstName}
               name="firstName"
               required
               onChange={handleInputChange}
@@ -71,6 +72,7 @@ export default function PersonalDetail({ enabledNext }) {
           <div>
             <label className="text-sm">Last Name</label>
             <Input
+              defaultValue={resumeInfo?.lastName}
               name="lastName"
               required
               onChange={handleInputChange}
@@ -80,6 +82,7 @@ export default function PersonalDetail({ enabledNext }) {
           <div className="col-span-2">
             <label className="text-sm">Job title</label>
             <Input
+              defaultValue={resumeInfo?.jobTitle}
               name="jobTitle"
               required
               onChange={handleInputChange}
@@ -88,7 +91,8 @@ export default function PersonalDetail({ enabledNext }) {
 
           <div className="col-span-2">
             <label className="text-sm">Address</label>
-            <Input
+            <Input 
+              defaultValue={resumeInfo?.address}
               name="address"
               required
               onChange={handleInputChange}
@@ -98,6 +102,7 @@ export default function PersonalDetail({ enabledNext }) {
           <div>
             <label className="text-sm">Phone</label>
             <Input
+              defaultValue={resumeInfo?.phone}
               name="phone"
               required
               onChange={handleInputChange}
@@ -107,6 +112,7 @@ export default function PersonalDetail({ enabledNext }) {
           <div>
             <label className="text-sm">Email</label>
             <Input
+              defaultValue={resumeInfo?.email}
               name="email"
               required
               onChange={handleInputChange}
