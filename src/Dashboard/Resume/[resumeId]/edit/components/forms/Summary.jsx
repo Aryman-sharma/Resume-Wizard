@@ -58,7 +58,7 @@ export default function Summary({ enabledNext }) {
             size="sm"
             className="border-primary text-primary flex gap-2"
           ><Brain className="h-4 w-4"/>
-            Generate from AI
+            Generate From AI 
           </Button>
         </div>
 
