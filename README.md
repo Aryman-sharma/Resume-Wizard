@@ -2,7 +2,7 @@
 
 Welcome to **Resume Wizard**, an AI-powered Resume Builder App designed to help users create professional resumes effortlessly. Built with the latest web technologies, this app is perfect for developers looking to enhance their skills or deploy a modern, feature-rich application.
 
-## 🚀 Features
+##  Features
 
 - **AI-Powered**: Generate personalized resume content using AI.
 - **User-Friendly Interface**: Smooth and responsive UI built with React and Tailwind CSS.
@@ -10,7 +10,7 @@ Welcome to **Resume Wizard**, an AI-powered Resume Builder App designed to help 
 - **Authentication**: Secure user accounts with Clerk.
 - **Fast and Efficient**: Developed using Vite for lightning-fast build times.
 
-## 🛠️ Technologies
+##  Technologies
 
 - **React** - Frontend framework for building interactive UIs.
 - **Vite** - Next-generation frontend tooling.
