@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import PersonalDetail from "./forms/PersonalDetail";
-import { ArrowRight, LayoutGrid ,ArrowLeft } from "lucide-react";
+import { ArrowRight, LayoutGrid, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Summary from "./forms/Summary";
+import Experience from "./forms/Experience";
 
 export default function FormSection() {
-  const[activeFormIndex,setactiveFormIndex] =useState(1);
-  const[enableNext,setEnableNext] = useState(false);
+  const [activeFormIndex, setactiveFormIndex] = useState(1);
+  const [enableNext, setEnableNext] = useState(false);
   return (
     <div>
       <div className="flex justify-between items-center">
@@ -15,9 +16,20 @@ export default function FormSection() {
           Theme
         </Button>
         <div className="flex gap-2">
-        {activeFormIndex>1 && <Button size="sm" onClick={()=>setactiveFormIndex(activeFormIndex-1)}><ArrowLeft/></Button>}
-          <Button disabled={!enableNext}
-          onClick={()=>setactiveFormIndex(activeFormIndex+1)} className="flex gap-2 " size="sm">
+          {activeFormIndex > 1 && (
+            <Button
+              size="sm"
+              onClick={() => setactiveFormIndex(activeFormIndex - 1)}
+            >
+              <ArrowLeft />
+            </Button>
+          )}
+          <Button
+            disabled={!enableNext}
+            onClick={() => setactiveFormIndex(activeFormIndex + 1)}
+            className="flex gap-2 "
+            size="sm"
+          >
             Next
             <ArrowRight />
           </Button>
@@ -25,7 +37,13 @@ export default function FormSection() {
       </div>
 
       {/* Personal Details  */}
-      {activeFormIndex==1 ? <PersonalDetail enabledNext={(v)=>setEnableNext(v)} /> : activeFormIndex==2?<Summary enabledNext={(v)=>setEnableNext(v)}/>:null}
+      {activeFormIndex == 1 ? (
+        <PersonalDetail enabledNext={(v) => setEnableNext(v)} />
+      ) : activeFormIndex == 2 ? (
+        <Summary enabledNext={(v) => setEnableNext(v)} />
+      ) : activeFormIndex == 3 ? (
+        <Experience enabledNext={(v) => setEnableNext(v)} />
+      ) : null}
       {/* Summary */}
 
       {/* Experience */}
