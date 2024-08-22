@@ -23,10 +23,15 @@ Welcome to **Resume Wizard**, an AI-powered Resume Builder App designed to help 
 Below are some of the Images that this project showcases:
 
 ![Image 1](./GithubImages/Screenshot%202024-08-22%20065431.png)
+<br>
 ![Image 2](./GithubImages/Screenshot%202024-08-22%20065530.png)
+<br>
 ![Image 3](./GithubImages/Screenshot%202024-08-22%20065614.png)
+<br>
 ![Image 4](./GithubImages/Screenshot%202024-08-22%20065706.png)
+<br>
 ![Image 5](./GithubImages/Screenshot%202024-08-22%20065751.png)
+<br>
 
 
 ## 📦 Installation
