@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import RichTexteditor from "../RichTexteditor";
+import { ResumeInfoContext } from "@/context/ResumeInfoContext";
 
 export default function Experience() {
   const formField = {
@@ -13,10 +15,40 @@ export default function Experience() {
     endDate: "",
     workSummery: "",
   };
-
-  const handleChange = (index, event) => {};
-
+  
   const [experienceList, SetExperienceList] = useState([formField]);
+
+  const {resumeInfo,setResumeInfo} = useContext(ResumeInfoContext)
+
+  const handleChange = (index, event) => {
+    const newEntries = experienceList.slice();
+    const {name , value} =event.target;
+    newEntries[index][name]=value;
+    SetExperienceList(newEntries);
+  };
+
+  const handleRichTextEditor=(e,name,index)=>{
+    const newEntries = experienceList.slice();
+    newEntries[index][name]=e.target.value;
+    SetExperienceList(newEntries);
+  }
+ 
+  const AddNewExperience = () =>{
+    SetExperienceList([...experienceList,formField])
+  }
+
+  const removeExperience = () => {
+    SetExperienceList((experienceList) => experienceList.slice(0, -1));
+  };
+  
+  useEffect(()=>{
+     
+    setResumeInfo({
+        ...resumeInfo,
+        experience:experienceList
+    })
+
+  },[experienceList])
 
   return (
     <div>
@@ -87,16 +119,13 @@ export default function Experience() {
                       handleChange(index, event);
                     }}
                   ></Input>
+                  
                 </div>
 
-                <div>
-                  <label className="text-xs">Work Summary</label>
-                  <Input
-                    name="title"
-                    onChange={(event) => {
-                      handleChange(index, event);
-                    }}
-                  ></Input>
+                <div className="col-span-2">
+                     {/* work summary */}
+                     <RichTexteditor 
+                     onRichTextEditorChange={(event)=>handleRichTextEditor(event,'workSummery',index)}></RichTexteditor>
                 </div>
               </div>
             </div>
@@ -104,7 +133,11 @@ export default function Experience() {
         </div>
            
            <div className="flex justify-between">
-            <Button variant="outline" className="text-primary">+ Add More Experience</Button>
+            <div className="flex gap-2">
+            <Button variant="outline" className="text-primary" onClick={AddNewExperience}>+ Add More Experience</Button>
+            <Button variant="outline" className="text-primary" onClick={removeExperience}>- Remove</Button>
+            </div>
+            
             <Button>Save</Button>
            </div>
 
